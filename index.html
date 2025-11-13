@@ -3,23 +3,361 @@
 
 <head prefix="og: https://example.com/">
     <meta charset="UTF-8">
+    <meta name="description"
+        content="きらきら銀行は、簡単操作で口座開設から定期預金、投資信託、外貨預金までの各種金融サービスを提供します。最新のセキュリティ対策と親切なカスタマーサポートで、あなたの資産運用を全力でサポートします。お金を増やす、賢いパートナー、それがきらきら銀行です。">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- OGP -->
     <meta property="og:url" content="https://example.com/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content=" きらきら銀行">
-    <meta property="og:description" content="きらきら銀行は、簡単操作で口座開設から定期預金、投資信託、外貨預金までの各種金融サービスを提供します。最新のセキュリティ対策と親切なカスタマーサポートで、あなたの資産運用を全力でサポートします。お金を増やす、賢いパートナー、それがきらきら銀行です。">
+    <meta property="og:title" content="きらきら銀行">
+    <meta property="og:description"
+        content="きらきら銀行は、簡単操作で口座開設から定期預金、投資信託、外貨預金までの各種金融サービスを提供します。最新のセキュリティ対策と親切なカスタマーサポートで、あなたの資産運用を全力でサポートします。お金を増やす、賢いパートナー、それがきらきら銀行です。">
     <meta property="og:site_name" content="きらきら銀行">
-    <meta name="description" content="きらきら銀行は、簡単操作で口座開設から定期預金、投資信託、外貨預金までの各種金融サービスを提供します。最新のセキュリティ対策と親切なカスタマーサポートで、あなたの資産運用を全力でサポートします。お金を増やす、賢いパートナー、それがきらきら銀行です。">
+    <meta property="og:image" content="https://example.com/assets/images/ogp-image.jpg">
     <title>きらきら銀行</title>
+
+    <!-- web fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
     <!-- css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/style/style.css">
+
     <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js" defer></script>
 </head>
 
 <body>
+    <header class="header">
+        <div class="wrapper wrapper--header">
+
+            <div class="header__top">
+                <h1 class="site-title">
+                    <a href="./index.html">
+                        <img src="./assets/images/header_logo.svg" alt="きらきら銀行">
+                    </a>
+                </h1>
+
+                <i class="bi bi-list btn-hamburger"></i>
+
+                <!-- PC ボタン -->
+                <div class="header__buttons header__buttons--pc">
+                    <a href="/login/" class="btn-login">ログインする</a>
+                    <a href="/account/" class="btn-account">新規登録（無料）</a>
+                </div>
+            </div>
+
+            <!-- SP ボタン -->
+            <div class="header__buttons header__buttons--sp">
+                <a href="/login/" class="btn-login">ログインする</a>
+                <a href="/account/" class="btn-account">新規登録（無料）</a>
+            </div>
+
+        </div>
+
+        <!-- SP メニュー -->
+        <div class="sp-menu-overlay">
+            <div class="sp-menu">
+                <div class="sp-menu__top">
+                    <h1 class="site-title">
+                        <a href="./index.html">
+                            <img src="./assets/images/header_logo.svg" alt="きらきら銀行">
+                        </a>
+                    </h1>
+                    <i class="bi bi-x-lg btn-close"></i>
+                </div>
+
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="/individual/">個人のお客様</a></li>
+                        <li class="nav__item"><a href="">法人・個人事業主のお客様</a></li>
+                        <li class="nav__item"><a href="/aboutus/">きらきら銀行について</a></li>
+                        <li class="nav__item"><a href="/ir/">株主・投資家の皆さま</a></li>
+                        <li class="nav__item"><a href="/employment/">採用情報</a></li>
+                        <li class="nav__item"><a href="/support/">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="hero">
+            <div class="hero__txtZone">
+                <p class="hero__txtZone-txt">
+                    オンラインで、らくらく決済。<br>
+                    “できる”を身近に、スマートライフを。
+                </p>
+
+                <!-- 修正済み：a に統一 -->
+                <a href="/account/" class="btn btn--hero">新規登録（無料）はこちら</a>
+            </div>
+
+            <picture class="hero__img">
+                <source id="pcImage" srcset="./assets/images/pht_cover_pc_1.jpg" media="(min-width: 768px)">
+                <img id="spImage" src="./assets/images/pht_cover_sp_1.jpg" alt="">
+            </picture>
+        </div>
+
+        <div class="upper-btnZone">
+            <a href="/individual/" class="btn-person">個人のお客様</a>
+            <a href="business/" class="btn-corp">法人のお客様</a>
+        </div>
+
+        <section class="category">
+            <h2 class="section-title">お探しの内容をお選びください</h2>
+            <ul class="category__list">
+                <li class="category__item">
+                    <a href="/atm/">
+                        <img class="category__img" src="./assets/images/ico_atm.png" alt="">
+                        <div class="category__txt">ご利用いただけるATM</div>
+                    </a>
+                </li>
+                <li class="category__item">
+                    <a href="/procedures/">
+                        <img class="category__img" src="./assets/images/ico_document.png" alt="">
+                        <div class="category__txt">各種お手続き</div>
+                    </a>
+                </li>
+                <li class="category__item">
+                    <a href="/fees/">
+                        <img class="category__img" src="./assets/images/ico_yen.png" alt="">
+                        <div class="category__txt">手数料・金利</div>
+                    </a>
+                </li>
+                <li class="category__item">
+                    <a href="/support/">
+                        <img class="category__img" src="./assets/images/ico_question.png" alt="">
+                        <div class="category__txt">お問い合わせ</div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="news">
+            <div class="wrapper wrapper--news">
+
+                <div class="tab-header">
+                    <h2 class="tab-btn active" data-tab="release">ニュースリリース</h2>
+                    <h2 class="tab-btn" data-tab="info">お知らせ</h2>
+                </div>
+
+                <div class="tab-underline">
+                    <div class="underline active"></div>
+                    <div class="underline"></div>
+                </div>
+
+                <div class="tab-content active" id="release">
+                    <div class="news-item">
+                        <div class="news-date">2023年08月18日</div>
+                        <a href="/news0818/">
+                            <div class="news-text">【新サービス】独自のAIによる運用提案サービス「きらきらアドバイザー」をリリースしました！</div>
+                        </a>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">2023年08月16日</div>
+                        <a href="/news0816/">
+                            <div class="news-text">【新規取扱】ビットコイン等の仮想通貨を導入、デジタル資産の投資が可能に！</div>
+                        </a>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">2023年08月02日</div>
+                        <a href="/news0802/">
+                            <div class="news-text">【新商品】少額から始められる「きらきらスタート定期預金」を開始します。</div>
+                        </a>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">2023年07月12日</div>
+                        <a href="/news0712/">
+                            <div class="news-text">【新機能】スマホアプリに生体認証ログイン機能を追加。より安全に、より手軽に。</div>
+                        </a>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">2023年06月05日</div>
+                        <a href="news0605/">
+                            <div class="news-text">【更新】口座開設手続きが全てオンラインで可能に！しかも即日開設が可能になりました。</div>
+                        </a>
+                    </div>
+
+                    <!-- 修正：a だけにした -->
+                    <a href="/news/" class="btn btn-news">ニュースリリース一覧へ</a>
+                </div>
+
+                <div class="tab-content" id="info">
+                    <div class="news-item">
+                        <div class="news-date">2023年08月23日</div>
+                        <a href="/notice0823/">
+                            <div class="news-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</div>
+                        </a>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">2023年07月10日</div>
+                        <a href="/notice0710/">
+                            <div class="news-text">テキストテキストテキストテキストテキストテキストテキ스트テキストテキストテキスト</div>
+                        </a>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">2023年06月21日</div>
+                        <a href="/notice0621/">
+                            <div class="news-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</div>
+                        </a>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">2023年04月01日</div>
+                        <a href="/notice0401/">
+                            <div class="news-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</div>
+                        </a>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">2023年03月18日</div>
+                        <a href="/notice0318/">
+                            <div class="news-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</div>
+                        </a>
+                    </div>
+
+                    <!-- 修正 -->
+                    <a href="/notice0318/" class="btn btn-news">お知らせ一覧へ</a>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="campaign">
+            <div class="wrapper--campaign">
+                <h3 class="section-title">キャンペーン</h3>
+
+                <div class="swiper-area">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+                                <a href="/campaign01/">
+                                    <div class="swiper-slideItem">
+                                        <img src="./assets/images/pht_campaign_01.png" width="258" height="165" alt="">
+                                        <p>初めての口座開設で1万円プレゼントキャンペーン</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="/campaign02/">
+                                    <div class="swiper-slideItem">
+                                        <img src="./assets/images/pht_campaign_02.png" width="258" height="165" alt="">
+                                        <p>幸せを運ぶ！デジタル定期預金5%増額キャンペーン</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="/campaign03/">
+                                    <div class="swiper-slideItem">
+                                        <img src="./assets/images/pht_campaign_03.png" width="258" height="165" alt="">
+                                        <p>未来を胸に抱こう！長期投資信託キャンペーン</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="campaign04/">
+                                    <div class="swiper-slideItem">
+                                        <img src="./assets/images/pht_campaign_04.png" width="258" height="165" alt="">
+                                        <p>海外旅行準備はきらめき銀行で！外貨預金特別利率キャンペーン</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="/campaign05/">
+                                    <div class="swiper-slideItem">
+                                        <img src="./assets/images/pht_campaign_05.png" width="258" height="165" alt="">
+                                        <p>夢に向かってステップアップ！学生限定ローンキャンペーン</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </section>
+
+        <div class="bottom-btnZone">
+            <a href="/aboutus/" class="btn-about-us">きらきら銀行について</a>
+            <a href="/employment/" class="btn-recruit">採用情報</a>
+        </div>
+
+        <section class="caution">
+            <div class="wrapper wrapper--caution">
+
+                <div class="cautonZone">
+                    <div class="cautionZone-left">
+                        <div>
+                            <i class="bi bi-exclamation-circle"></i>
+                            マーク追加
+                        </div>
+                        <h2 class="cautionZone-left__txt">金融犯罪にご注意ください</h2>
+                    </div>
+                </div>
+
+                <div class="cautionZone-right">
+                    <ul class="cautionZone-right__list">
+                        <li class="cautionZone-right__item">
+                            <a href="/security01/">
+                                <i class="bi bi-arrow-right"></i>
+                                還付金詐欺にご注意ください
+                            </a>
+                        </li>
+                        <li class="cautionZone-right__item">
+                            <a href="/security02/">
+                                <i class="bi bi-arrow-right"></i>
+                                フィッシング詐欺にご注意ください
+                            </a>
+                        </li>
+                        <li class="cautionZone-right__item">
+                            <a href="/security03/">
+                                <i class="bi bi-arrow-right"></i>
+                                オレオレ詐欺にご注意ください
+                            </a>
+                        </li>
+                        <li class="cautionZone-right__item">
+                            <a href="/attention/">
+                                <i class="bi bi-arrow-right"></i>
+                                お客様へのご注意およびお願いについて
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-nav wrapper">
+            <ul class="footer-nav__list">
+                <li class="footer-nav__item"><a href="/individual/">個人のお客様</a></li>
+                <li class="footer-nav__item"><a href="">法人・個人事業主のお客様</a></li>
+                <li class="footer-nav__item"><a href="/aboutus/">きらきら銀行について</a></li>
+                <li class="footer-nav__item"><a href="/ir/">株主・投資家の皆さま</a></li>
+                <li class="footer-nav__item"><a href="/employment/">採用情報</a></li>
+                <li class="footer-nav__item"><a href="/support/">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </footer>
 
 </body>
-
 </html>

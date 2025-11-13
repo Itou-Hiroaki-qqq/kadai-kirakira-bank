@@ -1,0 +1,398 @@
+@charset "utf-8";
+
+/*
+common
+================================================ */
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    font-style: normal;
+    color: #000;
+    background-color: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.wrapper {
+    max-width: 1140px;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 22px;
+    line-height: 1.2;
+}
+
+/* common PC */
+@media (min-width:768px) {
+    .section-title {
+        font-size: 28px;
+    }
+}
+/* @media  (min-width:768px) */
+
+
+
+/*
+header
+================================================ */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.wrapper--header {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* ロゴサイズ（SP） */
+.site-title img {
+    width: 118px;
+    height: 19px;
+    display: block;
+}
+
+/* 上段：ロゴ＋ハンバーガー */
+.header__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ハンバーガー（SP表示） */
+.btn-hamburger {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #003087;
+}
+
+/* ログイン/新規登録ボタン（SPは下段に表示） */
+.header__buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.header__buttons--sp {
+    display: flex;
+    margin-top: 10px;
+}
+
+.header__buttons--pc {
+    display: none;
+}
+
+/* ボタンの簡易デザイン */
+.btn-login,
+.btn-account {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid #003087;
+    background: #ffffff;
+}
+
+.btn-account {
+    background: #003087;
+    color: #ffffff;
+}
+
+.btn-login a,
+.btn-account a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* spメニュー オーバーレイ */
+.sp-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0);
+    /* フェード背景 */
+    pointer-events: none;
+    transition: background 0.3s ease;
+    z-index: 2000;
+}
+
+.sp-menu {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    background: #003087;
+    /* 指定背景色 */
+    color: #ffffff;
+    padding: 20px;
+    transition: right 0.3s ease;
+}
+
+/* メニュー上部（ロゴ・閉じるボタン） */
+.sp-menu__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-close {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #003087;
+    background: #ffffff;
+    padding: 6px;
+    border-radius: 50%;
+}
+
+/* メニュー開いた時 */
+.sp-menu-overlay.active {
+    background: rgba(0, 0, 0, 0.4);
+    pointer-events: auto;
+}
+
+.sp-menu-overlay.active .sp-menu {
+    right: 0;
+}
+
+.nav__list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nav__item a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* header PC */
+@media (min-width: 768px) {
+
+    /* ロゴサイズ（PC） */
+    .site-title img {
+        width: 153px;
+        height: 24px;
+    }
+
+    /* ハンバーガー非表示 */
+    .btn-hamburger {
+        display: none;
+    }
+
+    /* ボタン位置調整：PCは右上にまとめる */
+    .header__buttons--pc {
+        display: flex;
+    }
+
+    .header__buttons--sp {
+        display: none;
+    }
+
+    /* SPメニューはPCでは完全非表示（必要なら）*/
+    .sp-menu-overlay {
+        display: none;
+    }
+}
+
+/* @media (min-width:768px) */
+
+
+
+/*
+news
+================================================ */
+.wrapper--news {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tab-header {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.tab-btn {
+    flex: 1;
+    cursor: pointer;
+    font-weight: normal;
+    padding: 0.5em 0;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    font-weight: bold;
+}
+
+.tab-underline {
+    display: flex;
+    width: 100%;
+}
+
+.underline {
+    flex: 1;
+    height: 2px;
+    background-color: #ccc;
+    transition: all 0.3s ease;
+}
+
+.underline.active {
+    height: 4px;
+    background-color: #000;
+}
+
+.tab-content {
+    display: none;
+    margin-top: 1em;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.news-item {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #ccc;
+    padding: 0.8em 0;
+}
+
+.news-date {
+    width: 30%;
+    font-size: 0.9em;
+}
+
+.news-text {
+    width: 70%;
+}
+
+
+/*
+campaign
+================================================ */
+/* 隣のスライドも表示させる場合の設定 */
+.swiper-area {
+    /* widthを指定しないと100%がデフォルト */
+    height: 600px;
+    overflow: hidden;
+    /* この指定がないと横にスクロールしてしまう */
+}
+
+.swiper {
+    width: 70%;
+    /* 表示する中心スライドの幅を指定 */
+    height: 100%;
+    overflow: visible;
+}
+
+.swiper-slideItem {
+    max-width: 258px;
+    margin: 0 auto;
+    /* スライド1枚ごとに中央ぞろえ */
+    /* swiper-slideに幅指定すると不具合あり */
+    /* ただswiper-slide自体も特定の幅をもつためPCサイズでは指定する必要があるかも */
+}
+
+/* スライド内のスタイル */
+.swiper-slideItem img {
+    width: 100%;
+    aspect-ratio: 258/164;
+    object-fit: cover;
+}
+
+.swiper-slideItem p {
+    margin-top: 24px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #0070e0;
+}
+
+/* ページネーションのスタイル */
+/* ドット全体の位置や余白を調整 */
+.swiper-pagination {
+    position: static;
+    /* ← 重なりを防ぐために固定位置から解除 */
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* すべてのドットの見た目 */
+.swiper-pagination-bullet {
+    width: 15px;
+    /* サイズ */
+    height: 15px;
+    background-color: #ffd2d2;
+    /* 通常の色 */
+    margin: 0 15px;
+    /* ドット間のスペース */
+    transition: all 0.3s;
+    opacity: 1;
+}
+
+/* アクティブなドット */
+.swiper-pagination-bullet-active {
+    background-color: #fa7da3;
+    /* アクティブ時の色（ピンク） */
+}
+
+/* ナビゲーションボタンのスタイル */
+/* スタイル付けする場合はswiper-areaにposition: relative;をかけておく */
+/* 共通のボタンスタイル */
+.original-butto-next,
+.original-butto-prev {
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* loopがfalseなら以下も設定 */
+.original-button-prev.swiper-button-disabled,
+.original-button-next.swiper-button-disabled {
+    opacity: 0.3;
+    cursor: auto;
+}
+
+
+/* 右（次へ）ボタンに画像を設定 */
+.original-butto-next {
+    background-image: url();
+    right: -39px;
+}
+
+/* 左（前へ）ボタンに画像を設定 */
+.original-butto-prev {
+    background-image: url();
+    left: -39px;
+}
+
+/* デフォルトの矢印を非表示にする */
+/* クラス名を変えていた場合は設定不要 */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    display: none;
+}
