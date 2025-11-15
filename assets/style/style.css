@@ -27,8 +27,26 @@ img {
 
 .section-title {
     font-size: 22px;
+    color: #000000;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.btn {
+    width: 100%;
+    max-width: 254px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #214afc, #218bfc);
+    border-radius: 25px;
+    padding: 8px 16px;
+    font-size: 16px;
+    color: #ffffff;
     line-height: 1.2;
 }
+
 
 /* common PC */
 @media (min-width:768px) {
@@ -37,7 +55,6 @@ img {
     }
 }
 /* @media  (min-width:768px) */
-
 
 
 /*
@@ -50,17 +67,10 @@ header
     width: 100%;
     background: #ffffff;
     z-index: 1000;
-    padding: 10px 0;
+    padding: 16px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.wrapper--header {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
-/* ロゴサイズ（SP） */
 .site-title img {
     width: 118px;
     height: 19px;
@@ -76,20 +86,21 @@ header
 
 /* ハンバーガー（SP表示） */
 .btn-hamburger {
-    font-size: 2rem;
+    font-size: 32px;
     cursor: pointer;
-    color: #003087;
+    color: #214afc;
 }
 
 /* ログイン/新規登録ボタン（SPは下段に表示） */
 .header__buttons {
     display: flex;
-    gap: 12px;
+    justify-content: center;
+    gap: 32px;
 }
 
 .header__buttons--sp {
     display: flex;
-    margin-top: 10px;
+    margin-top: 16px;
 }
 
 .header__buttons--pc {
@@ -97,23 +108,49 @@ header
 }
 
 /* ボタンの簡易デザイン */
-.btn-login,
-.btn-account {
+.btn-login {
+    width: 100%;
+    max-width: 163px;
+    height: 40px;
     padding: 8px 16px;
-    border-radius: 4px;
-    border: 1px solid #003087;
+    border-radius: 20px;
+    border: 1px solid #0070e0;
     background: #ffffff;
+    color: #0070e0;
+    font-size: 14px;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
 }
 
-.btn-account {
-    background: #003087;
+.btn-login:hover {
+    background: linear-gradient(to right, #214afc, #218bfc);
     color: #ffffff;
 }
 
-.btn-login a,
-.btn-account a {
-    color: inherit;
-    text-decoration: none;
+.btn-account {
+    width: 100%;
+    max-width: 163px;
+    height: 40px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: linear-gradient(to right, #214afc, #218bfc);
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.btn-account:hover {
+    background: transparent;
+    background-color: #ffffff;
+    color: #214afc;
+    border: 2px solid #214afc;
 }
 
 /* spメニュー オーバーレイ */
@@ -134,26 +171,26 @@ header
     position: absolute;
     top: 0;
     right: -100%;
-    width: 80%;
+    width: 100%;
     height: 100%;
     background: #003087;
-    /* 指定背景色 */
     color: #ffffff;
-    padding: 20px;
     transition: right 0.3s ease;
 }
 
 /* メニュー上部（ロゴ・閉じるボタン） */
 .sp-menu__top {
+    padding: 16px;
+    background-color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .btn-close {
-    font-size: 1.8rem;
+    font-size: 24px;
     cursor: pointer;
-    color: #003087;
+    color: #214afc;
     background: #ffffff;
     padding: 6px;
     border-radius: 50%;
@@ -169,11 +206,31 @@ header
     right: 0;
 }
 
+.nav {
+    padding-left: 16px;
+}
+
 .nav__list {
-    margin-top: 30px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
+}
+
+.nav__item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.nav__item::before {
+    content: "";
+    display: flex;
+    align-items: center;
+    width: 24px;
+    height: 1px;
+    margin-right: 10px;
+    background-color: #ffffff;
 }
 
 .nav__item a {
@@ -184,11 +241,18 @@ header
 
 /* header PC */
 @media (min-width: 768px) {
+    .header {
+        padding: 14px 0 18px;
+    }
 
     /* ロゴサイズ（PC） */
     .site-title img {
         width: 153px;
         height: 24px;
+    }
+
+    .header__buttons {
+        gap: 10px;
     }
 
     /* ハンバーガー非表示 */
@@ -205,19 +269,335 @@ header
         display: none;
     }
 
-    /* SPメニューはPCでは完全非表示（必要なら）*/
+    .btn-login {
+        width: 140px;
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .btn-account {
+        width: 140px;
+        font-size: 13px;
+    }
+
+    /* SPメニューはPCでは完全非表示*/
     .sp-menu-overlay {
         display: none;
     }
 }
-
 /* @media (min-width:768px) */
 
+
+/*
+hero
+================================================ */
+/* hero 全体 */
+.hero {
+    margin-top: 126px;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 390 / 362;
+    overflow: hidden;
+}
+
+/* 画像フェード用 */
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: 1;
+}
+
+.hero-img.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* テキストエリア */
+.hero__txtZone {
+    position: absolute;
+    z-index: 3;
+    top: 76px;
+    left: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* テキスト */
+.hero__txtZone-txt {
+    font-size: 20px;
+    color: #ffffff;
+    line-height: 1.75;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* ボタン */
+.btn--hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 250px;
+    height: 45px;
+    padding: 8px 16px;
+    margin-top: 23px;
+    background: linear-gradient(to right, #214afc, #218bfc);
+    border-radius: 22.5px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.btn--hero:hover {
+    background: transparent;
+    background-color: #ffffff;
+    color: #214afc;
+}
+
+/* hero PC */
+@media (min-width:768px) {
+    .hero {
+        margin-top: 74px;
+        aspect-ratio: 1200 / 728;
+    }
+
+    .hero__txtZone {
+        top: calc(100% * (229 / 728));
+        left: 98px;
+    }
+
+    .hero__txtZone-txt {
+        font-size: 32px;
+    }
+
+    .btn--hero {
+        width: 300px;
+        height: 50px;
+        margin-top: 56px;
+        border-radius: 25px;
+        font-size: 16px;
+    }
+}
+
+
+/*
+upper-btnZone
+================================================ */
+/* ボタンゾーン全体 */
+.upper-btnZone {
+    display: flex;
+    width: 100%;
+    height: 64px;
+    background: linear-gradient(to right, #214afc, #218bfc);
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* ボタン共通スタイル */
+.upper-btnZone a {
+    flex: 1;
+    text-align: center;
+    font-size: 16px;
+    padding: 8px 16px;
+    color: #ffffff;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    border: none;
+    transition: 0.3s;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.btn-person:hover {
+    opacity: 0.7;
+}
+
+.btn-corp:hover {
+    opacity: 0.7;
+}
+
+/* 区切り線 */
+.upper-btnZone a+a {
+    position: relative;
+}
+
+.upper-btnZone a+a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 25px;
+    background-color: #ffffff;
+}
+
+/* upper-btnZone PC */
+@media (min-width:768px) {
+
+    /* ボタンゾーン全体 */
+    .upper-btnZone {
+        height: 82px;
+    }
+
+    /* ボタン共通スタイル */
+    .upper-btnZone a {
+        font-size: 18px;
+    }
+
+    .upper-btnZone a+a::before {
+        width: 1px;
+        height: 35px;
+    }
+}
+/* @media  (min-width:768px) */
+
+
+/*
+category
+================================================ */
+/* セクション全体 */
+.category {
+    padding: 64px 0;
+}
+
+/* 最大幅制限 */
+.wrapper--category {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* リスト全体 */
+.category__list {
+    margin-top: 33px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* デフォルトは2列 */
+    gap: 18px;
+}
+
+/* リストアイテム */
+.category__item {
+    background-color: #deefff;
+    border-radius: 12px;
+    padding: 16px 8px;
+    text-align: center;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    aspect-ratio: 170 / 180;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 画像 */
+.category__img {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: 60px;
+    transition: 0.3s;
+}
+
+/* テキスト */
+.category__txt {
+    margin-top: 15px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #003087;
+    line-height: 1.76;
+}
+
+/* ホバー時 */
+.category__item:hover {
+    background-color: #c6e3fd;
+    /* 少し濃い水色 */
+}
+
+/* ホバー時 画像切り替え */
+.category__item:nth-child(1):hover .category__img {
+    content: url('../images/ico_atm_hover.png');
+}
+
+.category__item:nth-child(2):hover .category__img {
+    content: url('../images/ico_document_hover.png');
+}
+
+.category__item:nth-child(3):hover .category__img {
+    content: url('../images/ico_yen_hover.png');
+}
+
+.category__item:nth-child(4):hover .category__img {
+    content: url('../images/ico_question_hover.png');
+}
+
+/* category PC */
+@media screen and (min-width: 768px) {
+    /* セクション全体 */
+    .category {
+        padding: 100px 0 83px;
+    }
+
+    /* セクションタイトル */
+    .section-title {
+        font-size: 22px;
+        color: #000000;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    /* リスト全体 */
+    .category__list {
+        margin-top: 50px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    /* リストアイテム */
+    .category__item {
+        padding: 24px 16px;
+        width: 100%;
+        max-width: 235px;
+        aspect-ratio: 235 / 250;
+    }
+
+    /* 画像 */
+    .category__img {
+        width: auto;
+        height: 100px;
+    }
+
+    /* テキスト */
+    .category__txt {
+        margin-top: 17px;
+        font-size: 20px;
+        line-height: 1.2;
+    }
+}
 
 
 /*
 news
 ================================================ */
+.news {
+    padding: 0 0 32px;
+}
+
 .wrapper--news {
     max-width: 800px;
     margin: 0 auto;
@@ -232,13 +612,16 @@ news
 .tab-btn {
     flex: 1;
     cursor: pointer;
-    font-weight: normal;
-    padding: 0.5em 0;
+    padding: 16px 0;
+    opacity: 0.3;
     transition: all 0.3s ease;
+    font-size: 18px;
+    color: #003087;
+    line-height: 1.2;
 }
 
 .tab-btn.active {
-    font-weight: bold;
+    opacity: 1;
 }
 
 .tab-underline {
@@ -248,19 +631,18 @@ news
 
 .underline {
     flex: 1;
-    height: 2px;
-    background-color: #ccc;
+    height: 3px;
+    background-color: #0070e0;
+    opacity: 0.3;
     transition: all 0.3s ease;
 }
 
 .underline.active {
-    height: 4px;
-    background-color: #000;
+    opacity: 1;
 }
 
 .tab-content {
     display: none;
-    margin-top: 1em;
 }
 
 .tab-content.active {
@@ -268,46 +650,127 @@ news
 }
 
 .news-item {
-    display: flex;
-    flex-wrap: wrap;
     border-bottom: 1px solid #ccc;
-    padding: 0.8em 0;
+    padding: 24px 0;
 }
 
 .news-date {
-    width: 30%;
-    font-size: 0.9em;
+    font-size: 12px;
+    color: #555555;
+    line-height: 1.2;
+}
+
+.news-item a {
+    display: block;
+    margin-top: 16px;
 }
 
 .news-text {
-    width: 70%;
+    font-size: 14px;
+    color: #0070e0;
+    line-height: 1.78;
 }
+
+.btn-news {
+    margin: 32px auto 0;
+    transition: 0.3s;
+}
+
+.btn-news:hover {
+    background: transparent;
+    background-color: #ffffff;
+    color: #214afc;
+    border: 1px solid #214afc;
+}
+
+/* news PC */
+@media (min-width:768px) {
+    .news {
+        padding: 0 0 49px;
+    }
+
+    .tab-btn {
+        padding: 20px 0;
+        font-size: 28px;
+        color: #003087;
+    }
+
+    .tab-content {
+        margin-top: 16px;
+    }
+
+    .news-item {
+        display: flex;
+        /* flex-wrap: nowrap; */
+    }
+
+    .news-date {
+        width: 18%;
+        font-size: 16px;
+        padding-left: 16px;
+        /* flex-shrink: 0; */
+    }
+
+    .news-item a {
+        flex: 1;
+        margin-top: 0px;
+        padding: 0 24px;
+    }
+
+    .news-text {
+        font-size: 16px;
+        line-height: 1.75;
+        transform: translateY(-4px);
+    }
+
+    .btn-news {
+        margin: 24px auto 0;
+    }
+}
+/* @media  (min-width:768px) */
 
 
 /*
 campaign
 ================================================ */
+.campaign {
+    padding: 31px 0 32px;
+}
+
+.wrapper--campaign {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
 /* 隣のスライドも表示させる場合の設定 */
 .swiper-area {
     /* widthを指定しないと100%がデフォルト */
-    height: 600px;
-    overflow: hidden;
+    margin-top: 40px;
+    height: auto;
     /* この指定がないと横にスクロールしてしまう */
+    overflow: hidden;
+    /* 左右ボタン用 */
+    position: relative;
 }
 
 .swiper {
-    width: 70%;
-    /* 表示する中心スライドの幅を指定 */
     height: 100%;
     overflow: visible;
+    padding-bottom: 25px;
+}
+
+.swiper-slide {
+    /* スマホでスライド幅を狭くして左右が見えるようにする */
+    width: 66%;
+    max-width: 258px;
 }
 
 .swiper-slideItem {
     max-width: 258px;
-    margin: 0 auto;
     /* スライド1枚ごとに中央ぞろえ */
-    /* swiper-slideに幅指定すると不具合あり */
-    /* ただswiper-slide自体も特定の幅をもつためPCサイズでは指定する必要があるかも */
+    margin: 0 auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
 }
 
 /* スライド内のスタイル */
@@ -315,10 +778,12 @@ campaign
     width: 100%;
     aspect-ratio: 258/164;
     object-fit: cover;
+    border-radius: 12px 12px 0 0;
 }
 
 .swiper-slideItem p {
-    margin-top: 24px;
+    height: 132px;
+    padding: 24px 8px;
     text-align: center;
     font-weight: bold;
     font-size: 16px;
@@ -329,65 +794,53 @@ campaign
 /* ページネーションのスタイル */
 /* ドット全体の位置や余白を調整 */
 .swiper-pagination {
+    /* 重なりを防ぐために固定位置から解除 */
     position: static;
-    /* ← 重なりを防ぐために固定位置から解除 */
-    margin-top: 20px;
     text-align: center;
 }
 
 /* すべてのドットの見た目 */
 .swiper-pagination-bullet {
-    width: 15px;
     /* サイズ */
-    height: 15px;
-    background-color: #ffd2d2;
+    width: 12px;
+    height: 12px;
     /* 通常の色 */
-    margin: 0 15px;
+    background-color: #dddddd;
     /* ドット間のスペース */
+    margin: 0 16px;
     transition: all 0.3s;
     opacity: 1;
 }
 
 /* アクティブなドット */
 .swiper-pagination-bullet-active {
-    background-color: #fa7da3;
-    /* アクティブ時の色（ピンク） */
+    background-color: #003087;
 }
 
 /* ナビゲーションボタンのスタイル */
-/* スタイル付けする場合はswiper-areaにposition: relative;をかけておく */
 /* 共通のボタンスタイル */
 .original-butto-next,
 .original-butto-prev {
-    background-size: contain;
-    background-repeat: no-repeat;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    position: absolute;
-    width: 32px;
-    height: 32px;
     z-index: 10;
     cursor: pointer;
 }
 
-/* loopがfalseなら以下も設定 */
-.original-button-prev.swiper-button-disabled,
-.original-button-next.swiper-button-disabled {
-    opacity: 0.3;
-    cursor: auto;
+.arrow-icon {
+    font-size: 40px;
+    color: #0070e0;
 }
-
 
 /* 右（次へ）ボタンに画像を設定 */
 .original-butto-next {
-    background-image: url();
-    right: -39px;
+    right: -18px;
 }
 
 /* 左（前へ）ボタンに画像を設定 */
 .original-butto-prev {
-    background-image: url();
-    left: -39px;
+    left: -18px;
 }
 
 /* デフォルトの矢印を非表示にする */
@@ -396,3 +849,286 @@ campaign
 .swiper-button-prev::after {
     display: none;
 }
+
+/* campaign PC */
+@media (min-width:768px) {
+    .campaign {
+        padding: 50px 0 34px;
+    }
+
+    /* 隣のスライドも表示させる場合の設定 */
+    .swiper-area {
+        margin-top: 51px;
+    }
+
+    .swiper {
+        padding-bottom: 32px;
+    }
+
+    .swiper-slide {
+        /* スマホでスライド幅を狭くして左右が見えるようにする */
+        width: 66%;
+        max-width: 226px;
+    }
+
+    .swiper-slideItem {
+        max-width: 226px;
+    }
+
+    /* スライド内のスタイル */
+    .swiper-slideItem img {
+        width: 100%;
+        aspect-ratio: 226/145;
+    }
+
+    .swiper-slideItem p {
+        height: 137px;
+        padding: 23px 8px;
+    }
+}
+/* @media  (min-width:768px) */
+
+
+/*
+bottom-btnZone
+================================================ */
+.bottom-btnZone {
+    padding: 32px 0 49px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper--bottom-btnZone {
+    width: 100%;
+    max-width: 1140px;
+}
+
+/* 共通ボタンスタイル */
+.btn-common {
+    width: 100%;
+    max-width: 450px;
+    height: 64px;
+    margin: 0 auto;
+    padding: 8px 16px;
+    border: 1px solid #0070e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0070e0;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.btn-common:hover {
+    background-color: #0070e0;
+    color: #ffffff;
+}
+
+.btn-common:hover i {
+    color: #ffffff;
+}
+
+/* ボタン内のアイコン配置 */
+.btn-common i {
+    position: absolute;
+    right: 17px;
+    color: #0070e0;
+    font-size: 18px;
+    /* Bootstrap Icon のサイズ調整 */
+}
+
+.btn-recruit {
+    margin-top: 24px;
+}
+
+/* bottom-btnZone PC */
+@media (min-width:768px) {
+    .bottom-btnZone {
+        padding: 24px 0 100px;
+    }
+
+    .wrapper--bottom-btnZone {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 40px;
+    }
+
+    /* 共通ボタンスタイル */
+    .btn-common {
+        height: 80px;
+        margin: 0;
+        font-size: 20px;
+    }
+
+    /* ボタン内のアイコン配置 */
+    .btn-common i {
+        right: 24px;
+        /* Bootstrap Icon のサイズ調整 */
+        font-size: 20px;
+    }
+
+    .btn-recruit {
+        margin-top: 0;
+    }
+}
+/* @media  (min-width:768px) */
+
+
+/*
+caution
+================================================ */
+.caution {
+    background-color: #f0f0f0;
+    padding: 40px 0 41px;
+}
+
+.wrapper--caution {
+    max-width: 800px;
+}
+
+.cautionZone-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 16px;
+}
+
+.cautionZone-left i {
+    font-size: 30px;
+    color: #000000;
+}
+
+.cautionZone-left__txt {
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.2;
+}
+
+.cautionZone-right {
+    margin-top: 40px;
+}
+
+.cautionZone-right__item {
+    font-size: 15px;
+    color: #0070e0;
+    line-height: 1.2;
+}
+
+.cautionZone-right__item i {
+    margin-right: 8px;
+}
+
+.cautionZone-right__item:not(:first-of-type) {
+    margin-top: 25px;
+}
+
+/* caution PC */
+@media (min-width:768px) {
+    .caution {
+        padding: 65px 0;
+    }
+
+    .cautionZone {
+        display: flex;
+        align-items: center;
+    }
+
+    .cautionZone-left {
+        display: block;
+        column-gap: 0;
+        margin-right: 64px;
+    }
+
+    .cautionZone-left div {
+        text-align: center;
+    }
+
+    .cautionZone-left i {
+        font-size: 50px;
+    }
+
+    .cautionZone-left__txt {
+        margin-top: 40px;
+        font-size: 18px;
+    }
+
+    .cautionZone-right {
+        margin-top: 0;
+    }
+
+    .cautionZone-right__item {
+        font-size: 16px;
+    }
+
+    .cautionZone-right__item i {
+        margin-right: 7px;
+    }
+
+    .cautionZone-right__item:not(:first-of-type) {
+        margin-top: 24px;
+    }
+}
+/* @media  (min-width:768px) */
+
+
+/*
+footer
+================================================ */
+footer {
+    padding: 64px 0 65px;
+    background-color: #003087;
+}
+
+.footer-nav__item {
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.footer-nav__item:not(:first-of-type) {
+    margin-top: 24px;
+}
+
+/* footer PC */
+@media (min-width:768px) {
+    footer {
+        padding: 48px 0 45px;
+    }
+
+    .footer-nav__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-nav__item {
+        position: relative;
+        padding: 0 24px;
+    }
+
+    .footer-nav__item:not(:first-of-type) {
+        margin-top: 0;
+    }
+
+    .footer-nav__item:not(:first-child)::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 20px;
+        background-color: #ffffff;
+    }
+}
+/* @media  (min-width:768px) */

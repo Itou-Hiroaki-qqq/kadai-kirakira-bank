@@ -18,22 +18,40 @@ document.addEventListener('DOMContentLoaded', () => {
             overlay.classList.remove("active");
         }
     });
+
+
     // hero：背景画像のスライドショー切り替え
-    const pcImages = [
+    let currentIndex = 0;
+    // PC用画像
+    const pcSrc = [
         './assets/images/pht_cover_pc_1.jpg',
         './assets/images/pht_cover_pc_2.jpg'
     ];
-    const spImages = [
+    // SP用画像
+    const spSrc = [
         './assets/images/pht_cover_sp_1.jpg',
         './assets/images/pht_cover_sp_2.jpg'
     ];
-    let currentIndex = 0;
+    // img要素（2枚）
+    const imgElements = [
+        document.getElementById('heroImg1'),
+        document.getElementById('heroImg2')
+    ];
+    function updateImages() {
+        const isPC = window.matchMedia('(min-width: 768px)').matches;
+
+        imgElements[0].src = isPC ? pcSrc[0] : spSrc[0];
+        imgElements[1].src = isPC ? pcSrc[1] : spSrc[1];
+    }
+    // 初期画像を切り替え
+    updateImages();
+    window.addEventListener('resize', updateImages);
+    // フェード切替ループ
     setInterval(() => {
-        currentIndex = (currentIndex + 1) % pcImages.length;
-        // 画像を切り替え
-        document.getElementById('pcImage').srcset = pcImages[currentIndex];
-        document.getElementById('spImage').src = spImages[currentIndex];
-    }, 3000); // 3秒ごと
+        imgElements[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % 2;
+        imgElements[currentIndex].classList.add('active');
+    }, 3000);
 
 
     // セクションnews：タブの切り替え
@@ -61,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // ループ設定
         //falseにする場合&&ボタン名が自作の場合はCSSでdisabled処理を追加
-        loop: true,  //ループによるスライド個数のエラーを防ぐならfalseに
+        loop: false,  //ループによるスライド個数のエラーを防ぐならfalseに
 
         //カーソル設定
         grabCursor: true, //カーソルを当てると変化する
@@ -69,8 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // ナビゲーションボタン設定
         //デフォルトでやるならprevEl: '.swiper-button-prev'…
         navigation: {
-            prevEl: '.original-button-prev',
-            nextEl: '.original-button-next',
+            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
         },
 
         // ページネーション設定
@@ -79,21 +97,16 @@ document.addEventListener('DOMContentLoaded', () => {
             clickable: true,
         },
 
-        // スクロールバー
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
-
         // sp設定
-        slidesPerView: 1, //表示するスライド数
-        slidesPerGroup: 1, //クリック時に進むスライド数
-        spaceBetween: 15, //スライド間に15pxの余白
-        // ブレークポイント（PCサイズ以上でスライド3枚に）
+        slidesPerView: 'auto',  // 自動サイズ指定
+        centeredSlides: true, // 中央に表示する
+        spaceBetween: 20,
+        // ブレークポイント（PCサイズ以上でスライド4枚に）
         breakpoints: {
             768: { // 768px以上の画面幅
-                slidesPerView: 3,
-                slidesPerGroup: 3,
-                spaceBetween: 15,
+                slidesPerView: 4,
+                centeredSlides: false, // PCでは中央配置を解除
+                spaceBetween: 32,
             }
         },
     });

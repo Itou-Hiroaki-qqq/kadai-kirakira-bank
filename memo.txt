@@ -11,12 +11,12 @@ main
         section caution
 footer h2
 
-wrapper width 100%   padding 16px
-    header => max-width  1140px
- category => 1000px
- news => 800px
- campaign => 1050px
- caution => 800px
+    wrapper width 100%   padding 16px
+        header => max-width  1140px
+        category => 1000px
+        news => 800px
+        campaign => 1050px
+        caution => 800px
 
     Noto Sans JP
     font-family: "Noto Sans JP", sans-serif;
@@ -30,10 +30,10 @@ PC表示:1200 × 660の画面サイズで確認した際に表示崩れが起き
 SP表示:390 × 650で確認した際に表示崩れが起きないように作成してください。
 また、幅390pxから幅2500pxまで変えた時に表示崩れがないようにしてください。
 
-アイコンについて
-bootstrap-iconsを利用して作成してください。
-バージョンは、最新のバージョンを使用。
-https://icons.getbootstrap.com/
+    アイコンについて
+    bootstrap-iconsを利用して作成してください。
+    バージョンは、最新のバージョンを使用。
+    https://icons.getbootstrap.com/
 
 画面効果を実装について（参照：https://docs.google.com/document/d/1-hNparmakU_u7aJrgx9-mJIHkocy1tLF9Ss9AIhvOEU/edit?tab=t.0）
 ・ハンバーガーメニュー

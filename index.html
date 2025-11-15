@@ -35,30 +35,26 @@
 
 <body>
     <header class="header">
-        <div class="wrapper wrapper--header">
-
+        <div class="wrapper">
             <div class="header__top">
                 <h1 class="site-title">
                     <a href="./index.html">
                         <img src="./assets/images/header_logo.svg" alt="きらきら銀行">
                     </a>
                 </h1>
-
+                <!-- ハンバーガーメニュー -->
                 <i class="bi bi-list btn-hamburger"></i>
-
                 <!-- PC ボタン -->
                 <div class="header__buttons header__buttons--pc">
                     <a href="/login/" class="btn-login">ログインする</a>
                     <a href="/account/" class="btn-account">新規登録（無料）</a>
                 </div>
             </div>
-
             <!-- SP ボタン -->
             <div class="header__buttons header__buttons--sp">
                 <a href="/login/" class="btn-login">ログインする</a>
                 <a href="/account/" class="btn-account">新規登録（無料）</a>
             </div>
-
         </div>
 
         <!-- SP メニュー -->
@@ -72,7 +68,6 @@
                     </h1>
                     <i class="bi bi-x-lg btn-close"></i>
                 </div>
-
                 <nav class="nav">
                     <ul class="nav__list">
                         <li class="nav__item"><a href="/individual/">個人のお客様</a></li>
@@ -88,22 +83,17 @@
     </header>
 
     <main>
-
         <div class="hero">
             <div class="hero__txtZone">
                 <p class="hero__txtZone-txt">
                     オンラインで、らくらく決済。<br>
                     “できる”を身近に、スマートライフを。
                 </p>
-
-                <!-- 修正済み：a に統一 -->
                 <a href="/account/" class="btn btn--hero">新規登録（無料）はこちら</a>
             </div>
-
-            <picture class="hero__img">
-                <source id="pcImage" srcset="./assets/images/pht_cover_pc_1.jpg" media="(min-width: 768px)">
-                <img id="spImage" src="./assets/images/pht_cover_sp_1.jpg" alt="">
-            </picture>
+            <!-- フェード用に画像を img で2枚重ねる -->
+            <img id="heroImg1" class="hero-img active" src="./assets/images/pht_cover_sp_1.jpg" alt="">
+            <img id="heroImg2" class="hero-img" src="./assets/images/pht_cover_sp_2.jpg" alt="">
         </div>
 
         <div class="upper-btnZone">
@@ -112,48 +102,47 @@
         </div>
 
         <section class="category">
-            <h2 class="section-title">お探しの内容をお選びください</h2>
-            <ul class="category__list">
-                <li class="category__item">
-                    <a href="/atm/">
-                        <img class="category__img" src="./assets/images/ico_atm.png" alt="">
-                        <div class="category__txt">ご利用いただけるATM</div>
-                    </a>
-                </li>
-                <li class="category__item">
-                    <a href="/procedures/">
-                        <img class="category__img" src="./assets/images/ico_document.png" alt="">
-                        <div class="category__txt">各種お手続き</div>
-                    </a>
-                </li>
-                <li class="category__item">
-                    <a href="/fees/">
-                        <img class="category__img" src="./assets/images/ico_yen.png" alt="">
-                        <div class="category__txt">手数料・金利</div>
-                    </a>
-                </li>
-                <li class="category__item">
-                    <a href="/support/">
-                        <img class="category__img" src="./assets/images/ico_question.png" alt="">
-                        <div class="category__txt">お問い合わせ</div>
-                    </a>
-                </li>
-            </ul>
+            <div class="wrapper wrapper--category">
+                <h2 class="section-title">お探しの内容をお選びください</h2>
+                <ul class="category__list">
+                    <li class="category__item">
+                        <a href="/atm/">
+                            <img class="category__img" src="./assets/images/ico_atm.png" alt="">
+                            <div class="category__txt">ご利用いただけるATM</div>
+                        </a>
+                    </li>
+                    <li class="category__item">
+                        <a href="/procedures/">
+                            <img class="category__img" src="./assets/images/ico_document.png" alt="">
+                            <div class="category__txt">各種お手続き</div>
+                        </a>
+                    </li>
+                    <li class="category__item">
+                        <a href="/fees/">
+                            <img class="category__img" src="./assets/images/ico_yen.png" alt="">
+                            <div class="category__txt">手数料・金利</div>
+                        </a>
+                    </li>
+                    <li class="category__item">
+                        <a href="/support/">
+                            <img class="category__img" src="./assets/images/ico_question.png" alt="">
+                            <div class="category__txt">お問い合わせ</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </section>
 
         <section class="news">
             <div class="wrapper wrapper--news">
-
                 <div class="tab-header">
                     <h2 class="tab-btn active" data-tab="release">ニュースリリース</h2>
                     <h2 class="tab-btn" data-tab="info">お知らせ</h2>
                 </div>
-
                 <div class="tab-underline">
                     <div class="underline active"></div>
                     <div class="underline"></div>
                 </div>
-
                 <div class="tab-content active" id="release">
                     <div class="news-item">
                         <div class="news-date">2023年08月18日</div>
@@ -185,11 +174,8 @@
                             <div class="news-text">【更新】口座開設手続きが全てオンラインで可能に！しかも即日開設が可能になりました。</div>
                         </a>
                     </div>
-
-                    <!-- 修正：a だけにした -->
                     <a href="/news/" class="btn btn-news">ニュースリリース一覧へ</a>
                 </div>
-
                 <div class="tab-content" id="info">
                     <div class="news-item">
                         <div class="news-date">2023年08月23日</div>
@@ -221,10 +207,7 @@
                             <div class="news-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</div>
                         </a>
                     </div>
-
-                    <!-- 修正 -->
                     <a href="/notice0318/" class="btn btn-news">お知らせ一覧へ</a>
-
                 </div>
             </div>
         </section>
@@ -232,11 +215,9 @@
         <section class="campaign">
             <div class="wrapper--campaign">
                 <h3 class="section-title">キャンペーン</h3>
-
                 <div class="swiper-area">
                     <div class="swiper">
                         <div class="swiper-wrapper">
-
                             <div class="swiper-slide">
                                 <a href="/campaign01/">
                                     <div class="swiper-slideItem">
@@ -245,7 +226,6 @@
                                     </div>
                                 </a>
                             </div>
-
                             <div class="swiper-slide">
                                 <a href="/campaign02/">
                                     <div class="swiper-slideItem">
@@ -254,7 +234,6 @@
                                     </div>
                                 </a>
                             </div>
-
                             <div class="swiper-slide">
                                 <a href="/campaign03/">
                                     <div class="swiper-slideItem">
@@ -263,7 +242,6 @@
                                     </div>
                                 </a>
                             </div>
-
                             <div class="swiper-slide">
                                 <a href="campaign04/">
                                     <div class="swiper-slideItem">
@@ -272,7 +250,6 @@
                                     </div>
                                 </a>
                             </div>
-
                             <div class="swiper-slide">
                                 <a href="/campaign05/">
                                     <div class="swiper-slideItem">
@@ -281,67 +258,72 @@
                                     </div>
                                 </a>
                             </div>
-
                         </div>
-
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-
+                        <!-- スライド左右のボタン -->
+                        <div class="swiper-button-prev">
+                            <i class="bi bi-arrow-left-circle-fill arrow-icon"></i>
+                        </div>
+                        <div class="swiper-button-next">
+                            <i class="bi bi-arrow-right-circle-fill arrow-icon"></i>
+                        </div>
                     </div>
                 </div>
-
+                <!-- ページネーション -->
                 <div class="swiper-pagination"></div>
-                <div class="swiper-scrollbar"></div>
             </div>
         </section>
 
         <div class="bottom-btnZone">
-            <a href="/aboutus/" class="btn-about-us">きらきら銀行について</a>
-            <a href="/employment/" class="btn-recruit">採用情報</a>
+            <div class="wrapper wrapper--bottom-btnZone">
+                <a href="/aboutus/" class="btn-common btn-about-us">
+                    きらきら銀行について
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+                <a href="/employment/" class="btn-common btn-recruit">
+                    採用情報
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
         </div>
 
         <section class="caution">
             <div class="wrapper wrapper--caution">
-
-                <div class="cautonZone">
+                <div class="cautionZone">
                     <div class="cautionZone-left">
                         <div>
                             <i class="bi bi-exclamation-circle"></i>
-                            マーク追加
                         </div>
                         <h2 class="cautionZone-left__txt">金融犯罪にご注意ください</h2>
                     </div>
+                    <div class="cautionZone-right">
+                        <ul class="cautionZone-right__list">
+                            <li class="cautionZone-right__item">
+                                <a href="/security01/">
+                                    <i class="bi bi-arrow-right"></i>
+                                    還付金詐欺にご注意ください
+                                </a>
+                            </li>
+                            <li class="cautionZone-right__item">
+                                <a href="/security02/">
+                                    <i class="bi bi-arrow-right"></i>
+                                    フィッシング詐欺にご注意ください
+                                </a>
+                            </li>
+                            <li class="cautionZone-right__item">
+                                <a href="/security03/">
+                                    <i class="bi bi-arrow-right"></i>
+                                    オレオレ詐欺にご注意ください
+                                </a>
+                            </li>
+                            <li class="cautionZone-right__item">
+                                <a href="/attention/">
+                                    <i class="bi bi-arrow-right"></i>
+                                    お客様へのご注意およびお願いについて
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-
-                <div class="cautionZone-right">
-                    <ul class="cautionZone-right__list">
-                        <li class="cautionZone-right__item">
-                            <a href="/security01/">
-                                <i class="bi bi-arrow-right"></i>
-                                還付金詐欺にご注意ください
-                            </a>
-                        </li>
-                        <li class="cautionZone-right__item">
-                            <a href="/security02/">
-                                <i class="bi bi-arrow-right"></i>
-                                フィッシング詐欺にご注意ください
-                            </a>
-                        </li>
-                        <li class="cautionZone-right__item">
-                            <a href="/security03/">
-                                <i class="bi bi-arrow-right"></i>
-                                オレオレ詐欺にご注意ください
-                            </a>
-                        </li>
-                        <li class="cautionZone-right__item">
-                            <a href="/attention/">
-                                <i class="bi bi-arrow-right"></i>
-                                お客様へのご注意およびお願いについて
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
             </div>
         </section>
     </main>
@@ -358,6 +340,5 @@
             </ul>
         </div>
     </footer>
-
 </body>
 </html>
