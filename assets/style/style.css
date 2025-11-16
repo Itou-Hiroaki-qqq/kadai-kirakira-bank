@@ -67,8 +67,12 @@ header
     width: 100%;
     background: #ffffff;
     z-index: 1000;
-    padding: 16px 0;
+    padding: 8px 0 31px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.wrapper--header {
+    max-width: 1170px;
 }
 
 .site-title img {
@@ -89,6 +93,8 @@ header
     font-size: 32px;
     cursor: pointer;
     color: #214afc;
+    /* ピクセルパーフェクトのための調整 */
+    transform: translate(-1px, -2px);
 }
 
 /* ログイン/新規登録ボタン（SPは下段に表示） */
@@ -100,7 +106,7 @@ header
 
 .header__buttons--sp {
     display: flex;
-    margin-top: 16px;
+    margin-top: 21px;
 }
 
 .header__buttons--pc {
@@ -132,7 +138,7 @@ header
 
 .btn-account {
     width: 100%;
-    max-width: 163px;
+    max-width: 165px;
     height: 40px;
     padding: 8px 16px;
     border-radius: 20px;
@@ -144,6 +150,8 @@ header
     justify-content: center;
     align-items: center;
     transition: 0.3s;
+    /* ピクセルパーフェクトのための調整 */
+    transform: translateX(4px);
 }
 
 .btn-account:hover {
@@ -293,21 +301,22 @@ hero
 ================================================ */
 /* hero 全体 */
 .hero {
-    margin-top: 126px;
+    margin-top: 50px;
     position: relative;
     width: 100%;
-    aspect-ratio: 390 / 362;
+    aspect-ratio: 390 / 449;
     overflow: hidden;
 }
 
 /* 画像フェード用 */
 .hero-img {
     position: absolute;
-    top: 0;
+    top: 0px;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
     opacity: 0;
     transition: opacity 1s ease;
     z-index: 1;
@@ -322,7 +331,7 @@ hero
 .hero__txtZone {
     position: absolute;
     z-index: 3;
-    top: 76px;
+    top: 155px;
     left: 16px;
     width: 100%;
     box-sizing: border-box;
@@ -345,7 +354,7 @@ hero
     max-width: 250px;
     height: 45px;
     padding: 8px 16px;
-    margin-top: 23px;
+    margin-top: 14px;
     background: linear-gradient(to right, #214afc, #218bfc);
     border-radius: 22.5px;
     color: #ffffff;
@@ -365,13 +374,13 @@ hero
 /* hero PC */
 @media (min-width:768px) {
     .hero {
-        margin-top: 74px;
-        aspect-ratio: 1200 / 728;
+        margin-top: 0px;
+        aspect-ratio: 1200 / 800;
     }
 
     .hero__txtZone {
-        top: calc(100% * (229 / 728));
-        left: 98px;
+        top: calc(100% * (261 / 728));
+        left: 100px;
     }
 
     .hero__txtZone-txt {
@@ -379,11 +388,14 @@ hero
     }
 
     .btn--hero {
-        width: 300px;
+        max-width: 300px;
+        width: 100%;
         height: 50px;
-        margin-top: 56px;
+        margin-top: 44px;
         border-radius: 25px;
         font-size: 16px;
+        /* ピクセルパーフェクトのための調整 */
+        transform: translateX(1px);
     }
 }
 
@@ -422,8 +434,18 @@ upper-btnZone
     transition: 0.3s;
 }
 
+.btn-person span {
+    /* ピクセルパーフェクトのための調整 */
+    transform: translateX(8px);
+}
+
 .btn-person:hover {
     opacity: 0.7;
+}
+
+.btn-corp span {
+    /* ピクセルパーフェクトのための調整 */
+    transform: translateX(-8px);
 }
 
 .btn-corp:hover {
@@ -463,6 +485,16 @@ upper-btnZone
         width: 1px;
         height: 35px;
     }
+
+    .btn-person span {
+        /* ピクセルパーフェクトのための調整 */
+        transform: translateX(15px);
+    }
+
+    .btn-corp span {
+        /* ピクセルパーフェクトのための調整 */
+        transform: translateX(-15px);
+    }
 }
 /* @media  (min-width:768px) */
 
@@ -472,18 +504,18 @@ category
 ================================================ */
 /* セクション全体 */
 .category {
-    padding: 64px 0;
+    padding: 61px 0;
 }
 
 /* 最大幅制限 */
 .wrapper--category {
-    max-width: 1000px;
+    max-width: 1030px;
     margin: 0 auto;
 }
 
 /* リスト全体 */
 .category__list {
-    margin-top: 33px;
+    margin-top: 27px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     /* デフォルトは2列 */
@@ -550,22 +582,14 @@ category
 @media screen and (min-width: 768px) {
     /* セクション全体 */
     .category {
-        padding: 100px 0 83px;
-    }
-
-    /* セクションタイトル */
-    .section-title {
-        font-size: 22px;
-        color: #000000;
-        line-height: 1.2;
-        text-align: center;
+        padding: 96px 0 75px;
     }
 
     /* リスト全体 */
     .category__list {
-        margin-top: 50px;
+        margin-top: 46px;
         grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
+        gap: 18px;
     }
 
     /* リストアイテム */
@@ -584,7 +608,7 @@ category
 
     /* テキスト */
     .category__txt {
-        margin-top: 17px;
+        margin-top: 13px;
         font-size: 20px;
         line-height: 1.2;
     }
@@ -599,7 +623,7 @@ news
 }
 
 .wrapper--news {
-    max-width: 800px;
+    max-width: 830px;
     margin: 0 auto;
 }
 
@@ -651,7 +675,7 @@ news
 
 .news-item {
     border-bottom: 1px solid #ccc;
-    padding: 24px 0;
+    padding: 20px 0;
 }
 
 .news-date {
@@ -662,7 +686,7 @@ news
 
 .news-item a {
     display: block;
-    margin-top: 16px;
+    margin-top: 7px;
 }
 
 .news-text {
@@ -672,7 +696,7 @@ news
 }
 
 .btn-news {
-    margin: 32px auto 0;
+    margin: 34px auto 0;
     transition: 0.3s;
 }
 
@@ -696,12 +720,24 @@ news
     }
 
     .tab-content {
-        margin-top: 16px;
+        margin-top: 15px;
     }
 
     .news-item {
         display: flex;
         /* flex-wrap: nowrap; */
+        padding: 20px 0 12px 0;
+    }
+
+    /* ピクセルパーフェクトのための調整 */
+    .news-item:nth-of-type(3) {
+        transform: translate(0px, 4px);
+    }
+    .news-item:nth-of-type(4) {
+        transform: translate(0px, 6px);
+    }
+    .news-item:nth-of-type(5) {
+        transform: translate(0px, 8px);
     }
 
     .news-date {
@@ -714,17 +750,17 @@ news
     .news-item a {
         flex: 1;
         margin-top: 0px;
-        padding: 0 24px;
+        padding: 0 24px 0 11px;
     }
 
     .news-text {
         font-size: 16px;
         line-height: 1.75;
-        transform: translateY(-4px);
+        transform: translateY(-6px);
     }
 
     .btn-news {
-        margin: 24px auto 0;
+        margin: 32px auto 0;
     }
 }
 /* @media  (min-width:768px) */
@@ -734,18 +770,18 @@ news
 campaign
 ================================================ */
 .campaign {
-    padding: 31px 0 32px;
+    padding: 28px 0 32px;
 }
 
 .wrapper--campaign {
-    max-width: 1050px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 /* 隣のスライドも表示させる場合の設定 */
 .swiper-area {
     /* widthを指定しないと100%がデフォルト */
-    margin-top: 40px;
+    margin-top: 39px;
     height: auto;
     /* この指定がないと横にスクロールしてしまう */
     overflow: hidden;
@@ -757,6 +793,7 @@ campaign
     height: 100%;
     overflow: visible;
     padding-bottom: 25px;
+    max-width: 1000px;
 }
 
 .swiper-slide {
@@ -783,12 +820,14 @@ campaign
 
 .swiper-slideItem p {
     height: 132px;
-    padding: 24px 8px;
-    text-align: center;
+    padding: 16px 26px 16px 15px;
+    text-align: left;
     font-weight: bold;
     font-size: 16px;
     line-height: 1.75;
     color: #0070e0;
+    /* ピクセルパーフェクトのための調整 */
+    transform: translateX(5px);
 }
 
 /* ページネーションのスタイル */
@@ -797,6 +836,9 @@ campaign
     /* 重なりを防ぐために固定位置から解除 */
     position: static;
     text-align: center;
+    /* ピクセルパーフェクトのための調整 */
+    transform: translate(-1px, -4px);
+    --swiper-pagination-bullet-horizontal-gap: 8px;
 }
 
 /* すべてのドットの見た目 */
@@ -824,7 +866,7 @@ campaign
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    top: 50%;
+    top: 57%;
     width: 40px;
     height: 40px;
     transform: translateY(-50%);
@@ -835,13 +877,13 @@ campaign
 /* 右（次へ）ボタンに画像を設定 */
 .swiper-button-next {
     background-image: url(../images/next.png);
-    right: 5px;
+    right: 9px;
 }
 
 /* 左（前へ）ボタンに画像を設定 */
 .swiper-button-prev {
     background-image: url(../images/prev.png);
-    left: 5px;
+    left: 9px;
 }
 
 /* デフォルトの矢印を非表示にする */
@@ -854,12 +896,12 @@ campaign
 /* campaign PC */
 @media (min-width:768px) {
     .campaign {
-        padding: 50px 0 34px;
+        padding: 45px 0 34px;
     }
 
     /* 隣のスライドも表示させる場合の設定 */
     .swiper-area {
-        margin-top: 51px;
+        margin-top: 49px;
     }
 
     .swiper {
@@ -884,7 +926,26 @@ campaign
 
     .swiper-slideItem p {
         height: 137px;
-        padding: 23px 8px;
+        padding: 14px 26px 14px 16px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        top: 47%;
+        width: 50px;
+        height: 50px;
+    }
+
+    .swiper-button-next {
+        right: -7px;
+    }
+
+    .swiper-button-prev {
+        left: -7px;
+    }
+
+    .swiper-pagination {
+        transform: translate(-1px, -6px);
     }
 }
 /* @media  (min-width:768px) */
@@ -894,7 +955,7 @@ campaign
 bottom-btnZone
 ================================================ */
 .bottom-btnZone {
-    padding: 32px 0 49px;
+    padding: 26px 0 49px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -953,7 +1014,7 @@ bottom-btnZone
 /* bottom-btnZone PC */
 @media (min-width:768px) {
     .bottom-btnZone {
-        padding: 24px 0 100px;
+        padding: 15px 0 100px;
     }
 
     .wrapper--bottom-btnZone {
@@ -989,7 +1050,7 @@ caution
 ================================================ */
 .caution {
     background-color: #f0f0f0;
-    padding: 40px 0 41px;
+    padding: 37px 0 41px;
 }
 
 .wrapper--caution {
@@ -1004,7 +1065,7 @@ caution
 }
 
 .cautionZone-left i {
-    font-size: 30px;
+    font-size: 29px;
     color: #000000;
 }
 
@@ -1015,7 +1076,7 @@ caution
 }
 
 .cautionZone-right {
-    margin-top: 40px;
+    margin-top: 37px;
 }
 
 .cautionZone-right__item {
@@ -1025,28 +1086,32 @@ caution
 }
 
 .cautionZone-right__item i {
-    margin-right: 8px;
+    margin-right: 3px;
 }
 
 .cautionZone-right__item:not(:first-of-type) {
-    margin-top: 25px;
+    margin-top: 21px;
 }
 
 /* caution PC */
 @media (min-width:768px) {
     .caution {
-        padding: 65px 0;
+        padding: 48px 0 77px;
     }
 
     .cautionZone {
         display: flex;
         align-items: center;
+        /* ピクセルパーフェクトのための調整 */
+        transform: translate(-16px, 5px);
     }
 
     .cautionZone-left {
         display: block;
         column-gap: 0;
         margin-right: 64px;
+        /* ピクセルパーフェクトのための調整 */
+        transform: translate(2px, 8px);
     }
 
     .cautionZone-left div {
@@ -1058,12 +1123,14 @@ caution
     }
 
     .cautionZone-left__txt {
-        margin-top: 40px;
+        margin-top: 36px;
         font-size: 18px;
     }
 
     .cautionZone-right {
         margin-top: 0;
+        /* ピクセルパーフェクトのための調整 */
+        transform: translate(-4px, 9px);
     }
 
     .cautionZone-right__item {
@@ -1075,7 +1142,7 @@ caution
     }
 
     .cautionZone-right__item:not(:first-of-type) {
-        margin-top: 24px;
+        margin-top: 20px;
     }
 }
 /* @media  (min-width:768px) */
@@ -1085,7 +1152,7 @@ caution
 footer
 ================================================ */
 footer {
-    padding: 64px 0 65px;
+    padding: 60px 0 65px;
     background-color: #003087;
 }
 
@@ -1097,7 +1164,7 @@ footer {
 }
 
 .footer-nav__item:not(:first-of-type) {
-    margin-top: 24px;
+    margin-top: 20px;
 }
 
 /* footer PC */

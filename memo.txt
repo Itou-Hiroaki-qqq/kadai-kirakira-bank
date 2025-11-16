@@ -1,7 +1,7 @@
-・カルーセル
-    カルーセル部分のSPの挙動は下記を参照ください。
-    SP挙動_静止画 (https://i.gyazo.com/014b210e532628b05bc5f42a32828959.jpg)
-    SP挙動_動画 (https://i.gyazo.com/548e0987f61e9f62080b5d8bf88c3dbb.mp4)
+        ・カルーセル
+            カルーセル部分のSPの挙動は下記を参照ください。
+            SP挙動_静止画 (https://i.gyazo.com/014b210e532628b05bc5f42a32828959.jpg)
+            SP挙動_動画 (https://i.gyazo.com/548e0987f61e9f62080b5d8bf88c3dbb.mp4)
 
 提出前最終確認
 ご提出頂く前の最終確認リストです。
