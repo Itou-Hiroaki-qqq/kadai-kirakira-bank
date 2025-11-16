@@ -47,8 +47,7 @@ img {
     line-height: 1.2;
 }
 
-
-/* common PC */
+/* >>> common PC */
 @media (min-width:768px) {
     .section-title {
         font-size: 28px;
@@ -81,7 +80,6 @@ header
     display: block;
 }
 
-/* 上段：ロゴ＋ハンバーガー */
 .header__top {
     display: flex;
     justify-content: space-between;
@@ -97,7 +95,6 @@ header
     transform: translate(-1px, -2px);
 }
 
-/* ログイン/新規登録ボタン（SPは下段に表示） */
 .header__buttons {
     display: flex;
     justify-content: center;
@@ -113,7 +110,6 @@ header
     display: none;
 }
 
-/* ボタンの簡易デザイン */
 .btn-login {
     width: 100%;
     max-width: 163px;
@@ -169,7 +165,6 @@ header
     width: 100%;
     height: 100vh;
     background: rgba(0, 0, 0, 0);
-    /* フェード背景 */
     pointer-events: none;
     transition: background 0.3s ease;
     z-index: 2000;
@@ -186,7 +181,6 @@ header
     transition: right 0.3s ease;
 }
 
-/* メニュー上部（ロゴ・閉じるボタン） */
 .sp-menu__top {
     padding: 16px;
     background-color: #ffffff;
@@ -247,13 +241,12 @@ header
     font-size: 1.2rem;
 }
 
-/* header PC */
+/* >>> header PC */
 @media (min-width: 768px) {
     .header {
         padding: 14px 0 18px;
     }
 
-    /* ロゴサイズ（PC） */
     .site-title img {
         width: 153px;
         height: 24px;
@@ -263,12 +256,10 @@ header
         gap: 10px;
     }
 
-    /* ハンバーガー非表示 */
     .btn-hamburger {
         display: none;
     }
 
-    /* ボタン位置調整：PCは右上にまとめる */
     .header__buttons--pc {
         display: flex;
     }
@@ -288,7 +279,6 @@ header
         font-size: 13px;
     }
 
-    /* SPメニューはPCでは完全非表示*/
     .sp-menu-overlay {
         display: none;
     }
@@ -299,7 +289,6 @@ header
 /*
 hero
 ================================================ */
-/* hero 全体 */
 .hero {
     margin-top: 50px;
     position: relative;
@@ -308,7 +297,6 @@ hero
     overflow: hidden;
 }
 
-/* 画像フェード用 */
 .hero-img {
     position: absolute;
     top: 0px;
@@ -327,7 +315,6 @@ hero
     z-index: 2;
 }
 
-/* テキストエリア */
 .hero__txtZone {
     position: absolute;
     z-index: 3;
@@ -337,7 +324,6 @@ hero
     box-sizing: border-box;
 }
 
-/* テキスト */
 .hero__txtZone-txt {
     font-size: 20px;
     color: #ffffff;
@@ -345,7 +331,6 @@ hero
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* ボタン */
 .btn--hero {
     display: flex;
     justify-content: center;
@@ -371,7 +356,7 @@ hero
     color: #214afc;
 }
 
-/* hero PC */
+/* >>> hero PC */
 @media (min-width:768px) {
     .hero {
         margin-top: 0px;
@@ -403,7 +388,6 @@ hero
 /*
 upper-btnZone
 ================================================ */
-/* ボタンゾーン全体 */
 .upper-btnZone {
     display: flex;
     width: 100%;
@@ -414,7 +398,6 @@ upper-btnZone
     box-sizing: border-box;
 }
 
-/* ボタン共通スタイル */
 .upper-btnZone a {
     flex: 1;
     text-align: center;
@@ -468,15 +451,13 @@ upper-btnZone
     background-color: #ffffff;
 }
 
-/* upper-btnZone PC */
+/* >>> upper-btnZone PC */
 @media (min-width:768px) {
 
-    /* ボタンゾーン全体 */
     .upper-btnZone {
         height: 82px;
     }
 
-    /* ボタン共通スタイル */
     .upper-btnZone a {
         font-size: 18px;
     }
@@ -502,31 +483,25 @@ upper-btnZone
 /*
 category
 ================================================ */
-/* セクション全体 */
 .category {
     padding: 61px 0;
 }
 
-/* 最大幅制限 */
 .wrapper--category {
     max-width: 1030px;
     margin: 0 auto;
 }
 
-/* リスト全体 */
 .category__list {
     margin-top: 27px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* デフォルトは2列 */
     gap: 18px;
 }
 
-/* リストアイテム */
 .category__item {
     background-color: #deefff;
     border-radius: 12px;
-    padding: 16px 8px;
     text-align: center;
     transition: background-color 0.3s;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
@@ -537,7 +512,18 @@ category
     align-items: center;
 }
 
-/* 画像 */
+.category__item a {
+    display: block;
+    padding: 29px 8px 16px;
+    width: 100%;
+    height: 100%;
+}
+
+/* ピクセルパーフェクトのための調整 */
+.category__item:not(:first-of-type) a {
+    padding: 42px 8px 16px;
+}
+
 .category__img {
     display: block;
     margin: 0 auto;
@@ -546,22 +532,18 @@ category
     transition: 0.3s;
 }
 
-/* テキスト */
 .category__txt {
-    margin-top: 15px;
+    margin-top: 8px;
     font-size: 17px;
     font-weight: bold;
     color: #003087;
     line-height: 1.76;
 }
 
-/* ホバー時 */
 .category__item:hover {
     background-color: #c6e3fd;
-    /* 少し濃い水色 */
 }
 
-/* ホバー時 画像切り替え */
 .category__item:nth-child(1):hover .category__img {
     content: url('../images/ico_atm_hover.png');
 }
@@ -578,35 +560,41 @@ category
     content: url('../images/ico_question_hover.png');
 }
 
-/* category PC */
+/* >>> category PC */
 @media screen and (min-width: 768px) {
-    /* セクション全体 */
     .category {
         padding: 96px 0 75px;
     }
 
-    /* リスト全体 */
     .category__list {
         margin-top: 46px;
         grid-template-columns: repeat(4, 1fr);
         gap: 18px;
     }
 
-    /* リストアイテム */
     .category__item {
-        padding: 24px 16px;
         width: 100%;
         max-width: 235px;
         aspect-ratio: 235 / 250;
     }
 
-    /* 画像 */
+    .category__item a {
+        display: block;
+        padding: 54px 16px 24px;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* ピクセルパーフェクトのための調整 */
+    .category__item:not(:first-of-type) a {
+        padding: 54px 16px 24px;
+    }
+
     .category__img {
         width: auto;
         height: 100px;
     }
 
-    /* テキスト */
     .category__txt {
         margin-top: 13px;
         font-size: 20px;
@@ -707,7 +695,7 @@ news
     border: 1px solid #214afc;
 }
 
-/* news PC */
+/* >>> news PC */
 @media (min-width:768px) {
     .news {
         padding: 0 0 49px;
@@ -725,7 +713,6 @@ news
 
     .news-item {
         display: flex;
-        /* flex-wrap: nowrap; */
         padding: 20px 0 12px 0;
     }
 
@@ -744,7 +731,6 @@ news
         width: 18%;
         font-size: 16px;
         padding-left: 16px;
-        /* flex-shrink: 0; */
     }
 
     .news-item a {
@@ -778,9 +764,7 @@ campaign
     margin: 0 auto;
 }
 
-/* 隣のスライドも表示させる場合の設定 */
 .swiper-area {
-    /* widthを指定しないと100%がデフォルト */
     margin-top: 39px;
     height: auto;
     /* この指定がないと横にスクロールしてしまう */
@@ -803,8 +787,8 @@ campaign
 }
 
 .swiper-slideItem {
-    max-width: 258px;
     /* スライド1枚ごとに中央ぞろえ */
+    max-width: 258px;
     margin: 0 auto;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
@@ -831,36 +815,30 @@ campaign
 }
 
 /* ページネーションのスタイル */
-/* ドット全体の位置や余白を調整 */
 .swiper-pagination {
     /* 重なりを防ぐために固定位置から解除 */
     position: static;
     text-align: center;
+    /* ページネーションのドット間の余白調整 */
+    --swiper-pagination-bullet-horizontal-gap: 8px;
     /* ピクセルパーフェクトのための調整 */
     transform: translate(-1px, -4px);
-    --swiper-pagination-bullet-horizontal-gap: 8px;
 }
 
 /* すべてのドットの見た目 */
 .swiper-pagination-bullet {
-    /* サイズ */
     width: 12px;
     height: 12px;
-    /* 通常の色 */
     background-color: #dddddd;
-    /* ドット間のスペース */
-    margin: 0 16px;
     transition: all 0.3s;
     opacity: 1;
 }
 
-/* アクティブなドット */
 .swiper-pagination-bullet-active {
     background-color: #003087;
 }
 
 /* ナビゲーションボタンのスタイル */
-/* 共通のボタンスタイル */
 .swiper-button-next,
 .swiper-button-prev {
     background-size: contain;
@@ -874,32 +852,28 @@ campaign
     cursor: pointer;
 }
 
-/* 右（次へ）ボタンに画像を設定 */
 .swiper-button-next {
     background-image: url(../images/next.png);
     right: 9px;
 }
 
-/* 左（前へ）ボタンに画像を設定 */
 .swiper-button-prev {
     background-image: url(../images/prev.png);
     left: 9px;
 }
 
 /* デフォルトの矢印を非表示にする */
-/* クラス名を変えていた場合は設定不要 */
 .swiper-button-next::after,
 .swiper-button-prev::after {
     display: none;
 }
 
-/* campaign PC */
+/* >>> campaign PC */
 @media (min-width:768px) {
     .campaign {
         padding: 45px 0 34px;
     }
 
-    /* 隣のスライドも表示させる場合の設定 */
     .swiper-area {
         margin-top: 49px;
     }
@@ -909,7 +883,6 @@ campaign
     }
 
     .swiper-slide {
-        /* スマホでスライド幅を狭くして左右が見えるようにする */
         width: 66%;
         max-width: 226px;
     }
@@ -918,7 +891,6 @@ campaign
         max-width: 226px;
     }
 
-    /* スライド内のスタイル */
     .swiper-slideItem img {
         width: 100%;
         aspect-ratio: 226/145;
@@ -966,7 +938,6 @@ bottom-btnZone
     max-width: 1140px;
 }
 
-/* 共通ボタンスタイル */
 .btn-common {
     width: 100%;
     max-width: 450px;
@@ -1004,14 +975,13 @@ bottom-btnZone
     right: 17px;
     color: #0070e0;
     font-size: 18px;
-    /* Bootstrap Icon のサイズ調整 */
 }
 
 .btn-recruit {
     margin-top: 24px;
 }
 
-/* bottom-btnZone PC */
+/* >>> bottom-btnZone PC */
 @media (min-width:768px) {
     .bottom-btnZone {
         padding: 15px 0 100px;
@@ -1024,7 +994,6 @@ bottom-btnZone
         column-gap: 40px;
     }
 
-    /* 共通ボタンスタイル */
     .btn-common {
         height: 80px;
         margin: 0;
@@ -1034,7 +1003,6 @@ bottom-btnZone
     /* ボタン内のアイコン配置 */
     .btn-common i {
         right: 24px;
-        /* Bootstrap Icon のサイズ調整 */
         font-size: 20px;
     }
 
@@ -1093,7 +1061,7 @@ caution
     margin-top: 21px;
 }
 
-/* caution PC */
+/* >>> aution PC */
 @media (min-width:768px) {
     .caution {
         padding: 48px 0 77px;
@@ -1167,7 +1135,7 @@ footer {
     margin-top: 20px;
 }
 
-/* footer PC */
+/* >>> footer PC */
 @media (min-width:768px) {
     footer {
         padding: 48px 0 45px;

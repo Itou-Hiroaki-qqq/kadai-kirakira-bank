@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // header:開閉ボタン関連
+    // header: ハンバーガーメニュー
     const btnOpen = document.querySelector(".btn-hamburger");
     const btnClose = document.querySelector(".btn-close");
     const overlay = document.querySelector(".sp-menu-overlay");
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // hero：背景画像のスライドショー切り替え
+    // hero： 背景画像のスライドショー切り替え
     let currentIndex = 0;
     // PC用画像
     const pcSrc = [
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3000);
 
 
-    // セクションnews：タブの切り替え
+    // セクションnews： タブの切り替え
     const tabs = document.querySelectorAll(".tab-btn");
     const contents = document.querySelectorAll(".tab-content");
     const underlines = document.querySelectorAll(".underline");
@@ -73,19 +73,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // セクションcampaign：スライダー設定
+    // セクションcampaign： スライダー設定
     // Swiperの初期化
     const swiper = new Swiper('.swiper', {
 
         // ループ設定
-        //falseにする場合&&ボタン名が自作の場合はCSSでdisabled処理を追加
-        loop: false,  //ループによるスライド個数のエラーを防ぐならfalseに
+        loop: false, 
 
         //カーソル設定
-        grabCursor: true, //カーソルを当てると変化する
+        grabCursor: true, 
 
         // ナビゲーションボタン設定
-        //デフォルトでやるならprevEl: '.swiper-button-prev'…
         navigation: {
             prevEl: '.swiper-button-prev',
             nextEl: '.swiper-button-next',
@@ -98,20 +96,17 @@ document.addEventListener('DOMContentLoaded', () => {
         },
 
         // sp設定
-        slidesPerView: 'auto',  // 自動サイズ指定
-        centeredSlides: true, // 中央に表示する
+        slidesPerView: 'auto', 
+        centeredSlides: true,
         spaceBetween: 20,
         // ブレークポイント（PCサイズ以上でスライド4枚に）
         breakpoints: {
-            768: { // 768px以上の画面幅
+            768: { 
                 slidesPerView: 4,
                 centeredSlides: false, // PCでは中央配置を解除
                 spaceBetween: 32,
             }
         },
     });
-
-
-
 
 }); //script END
